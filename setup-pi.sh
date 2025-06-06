@@ -26,6 +26,7 @@ df -h
 # Script untuk login github denga ssh
 # ================================================
 read -p "Maasukkan Email github : " email
+read -p "Maasukkan username github : " username
 
 # tentukan path
 key_path="$HOME/.ssh/id_ed25519"
@@ -52,6 +53,8 @@ ssh-add "$key_path"
 # Tampilkan pub key
 echo -e "\nSSH Public key kamu :\n"
 cat "${key_path}.pub"
+git config --global user.email "$email"
+git config --global user.name "$username"
 
 
 echo -e "\nCopy Public key di atas dan tambahkan ke https://github.com/settings/keys"
@@ -75,4 +78,16 @@ sudo apt install vim-fugitive -y
 echo -e "${BLUE}📦 Menginstall vim-airline...${NC}"
 sudo apt install vim-airline -y
 echo -e "${GREEN}✅ Semua plugin vim berhasil di Install!${NC}"
+
+
+
+
+
+
+
+
+
+
+
+
 

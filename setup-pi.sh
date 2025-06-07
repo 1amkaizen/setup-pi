@@ -69,6 +69,7 @@ echo "set number" | sudo tee -a /etc/vim/vimrc > /dev/null
 sudo tee -a /etc/vim/vimrc > /dev/null <<EOF 
 set number
 set tabstop=4
+syntax on
 EOF
 
 echo -e "${CYAN}🔧 Menginstall Vundle (Plugin Manager Vim)...${NC}"
@@ -77,6 +78,8 @@ echo -e "${YELLOW}📦 Menginstall vim-fugitive...${NC}"
 sudo apt install vim-fugitive -y
 echo -e "${BLUE}📦 Menginstall vim-airline...${NC}"
 sudo apt install vim-airline -y
+echo -e "${BLUE}📦 Menginstall nerdtree...${NC}"
+git clone https://github.com/preservim/nerdtree.git ~/.vim/bundle/nerdtree
 echo -e "${GREEN}✅ Semua plugin vim berhasil di Install!${NC}"
 
 

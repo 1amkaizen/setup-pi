@@ -70,6 +70,11 @@ sudo tee -a /etc/vim/vimrc > /dev/null <<EOF
 set number
 set tabstop=4
 syntax on
+execute pathogen#infect()
+syntax on
+filetype plugin on
+
+nnoremap <F5> :NERDTreeToggle<CR>
 EOF
 
 echo -e "${CYAN}🔧 Menginstall Vundle (Plugin Manager Vim)...${NC}"
@@ -78,6 +83,8 @@ echo -e "${YELLOW}📦 Menginstall vim-fugitive...${NC}"
 sudo apt install vim-fugitive -y
 echo -e "${BLUE}📦 Menginstall vim-airline...${NC}"
 sudo apt install vim-airline -y
+echo -e "${BLUE}📦 Menginstall pathogen...${NC}"
+sudo apt install vim-pathogen -y
 echo -e "${BLUE}📦 Menginstall nerdtree...${NC}"
 git clone https://github.com/preservim/nerdtree.git ~/.vim/bundle/nerdtree
 echo -e "${GREEN}✅ Semua plugin vim berhasil di Install!${NC}"
